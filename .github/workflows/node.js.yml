@@ -37,7 +37,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
     - run: yarn install
-    - run: yarn build --if-present
+    - run: username=${{ github.event.inputs.username }} yarn build --if-present
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
@@ -48,6 +48,7 @@ jobs:
         # The desired behavior if no files are found using the provided path.
 
   release:
+    needs: build
     runs-on: ubuntu-last
     steps:
     - name: Download a Build Artifact
@@ -57,5 +58,5 @@ jobs:
         # name: # optional
         # Destination path
         path: artifact # optional
-    - run: ls -al artifact
+    - run: ls -al .
 
