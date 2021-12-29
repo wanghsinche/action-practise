@@ -89,7 +89,7 @@ jobs:
         # The GITHUB_TOKEN secret
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         # Tag text
-        tag: build-at-${{ steps.current-time.outputs.time }}
+        tag: build-at-${{ steps.current-time.outputs.formattedTime }}
     - name: Github Release
       uses: elgohr/Github-Release-Action@v3.1
       with:
