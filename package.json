@@ -1,0 +1,11 @@
+{
+  "name": "action-practise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wanghsinche/action-practise.git",
+  "author": "xinzhe.wang@shopee.com <xinzhe.wang@shopee.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node src/index.js"
+  }
+}
