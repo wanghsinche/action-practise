@@ -91,10 +91,12 @@ jobs:
         # Tag text
         tag: build-at-${{ steps.current-time.outputs.formattedTime }}
     - name: Github Release
-      uses: elgohr/Github-Release-Action@v3.1
+      uses: ncipollo/release-action@v1
       with:
-        # The name of the release to publish
-        release: build-at-${{ steps.current-time.outputs.time }}.zip
+        artifacts: "release.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    
 
 
 
