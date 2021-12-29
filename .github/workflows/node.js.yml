@@ -51,6 +51,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Download a Build Artifact
       uses: actions/download-artifact@v2.1.0
       with:
@@ -77,7 +78,14 @@ jobs:
     - name: Get current time
       uses: gerred/actions/current-time@master
       id: current-time
-
+    - name: Commit tagger
+      # You may pin to the exact commit or the version.
+      # uses: tvdias/github-tagger@ed7350546e3e503b5e942dffd65bc8751a95e49d
+      uses: tvdias/github-tagger@v0.0.2
+      with:
+        # The GITHUB_TOKEN secret
+        # Tag text
+        tag: build-at-${{ steps.current-time.outputs.time }}
     - name: Github Release
       uses: elgohr/Github-Release-Action@v3.1
       with:
