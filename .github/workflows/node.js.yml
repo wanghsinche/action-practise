@@ -76,7 +76,10 @@ jobs:
         # Tool to use for archiving
         # type: # optional, default is zip
     - name: Get current time
-      uses: gerred/actions/current-time@master
+      uses: srfrnk/current-time@v1.1.0
+      with:
+        # Time format to use using [MomemtJS syntax](https://momentjs.com/)
+        format: YYYYMMDD-hhmmss # optional, default is <None>
       id: current-time
     - name: Commit tagger
       # You may pin to the exact commit or the version.
