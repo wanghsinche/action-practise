@@ -57,6 +57,6 @@ jobs:
         # Artifact name
         # name: # optional
         # Destination path
-        path: download # optional
-    - run: cd download && ls -l
+        path: ./ # optional
+    - run: upzip artifact && ls -l
 
