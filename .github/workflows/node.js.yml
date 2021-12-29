@@ -84,6 +84,7 @@ jobs:
       uses: tvdias/github-tagger@v0.0.2
       with:
         # The GITHUB_TOKEN secret
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
         # Tag text
         tag: build-at-${{ steps.current-time.outputs.time }}
     - name: Github Release
