@@ -58,5 +58,6 @@ jobs:
         # name: # optional
         # Destination path
         path: ./ # optional
-    - run: upzip artifact && ls -l
+    - run:  ls -R
+    
 
