@@ -49,7 +49,7 @@ jobs:
 
   release:
     needs: build
-    runs-on: ubuntu-last
+    runs-on: ubuntu-latest
     steps:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v2.1.0
