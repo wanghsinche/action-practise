@@ -53,10 +53,10 @@ jobs:
     steps:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v2.1.0
-      # with:
+      with:
         # Artifact name
         # name: # optional
         # Destination path
-        # path: artifact # optional
-    - run: unzip artifact dist && cd dist && ls -l
+        path: download # optional
+    - run: cd download && ls -l
 
