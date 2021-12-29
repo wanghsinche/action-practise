@@ -95,6 +95,7 @@ jobs:
       with:
         artifacts: "release.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
+        tag: build-at-${{ steps.current-time.outputs.formattedTime }}
 
     
 
