@@ -35,7 +35,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: 'yarn'
     - run: yarn install
     - run: yarn build --if-present
     - name: Upload a Build Artifact
