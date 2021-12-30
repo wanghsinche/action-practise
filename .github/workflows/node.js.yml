@@ -38,28 +38,27 @@ jobs:
         cache: 'yarn'
     - run: yarn install
     - run: username=${{ github.event.inputs.username }} yarn build --if-present
-    - name: Zip Result
+
+    - name: Easy Zip Files
       # You may pin to the exact commit or the version.
-      # uses: TheDoctor0/zip-release@4fb9e4ff72847dd3d1c111cf63834e353ed7cb3d
-      uses: TheDoctor0/zip-release@0.6.0
+      # uses: vimtor/action-zip@5f1c4aa587ea41db1110df6a99981dbe19cee310
+      uses: vimtor/action-zip@v1
       with:
-        # Filename for archive
-        # filename: # default is release.zip
-        # Base path for archive files
-        # path: # optional, default is .
-        # Working directory before zipping
-        directory: dist # optional, default is .
-        # List of excluded files / directories
-        # exclusions: # optional, default is 
-        # Tool to use for archiving
-        # type: # optional, default is zip
+        # Files or directories to zip
+        files: dist
+        # Name of output zip file
+        # dest: # optional, default is result.zip
+        # Whether to add subdirectories to simply zip all files to the root
+        # recursive: # optional, default is true
+
+
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
         # Artifact name
         # name: # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: dist/release.zip
+        path: release.zip
         # The desired behavior if no files are found using the provided path.
 
   release:
