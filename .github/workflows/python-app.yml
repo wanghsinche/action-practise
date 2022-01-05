@@ -56,9 +56,9 @@ jobs:
         tag: ${{ github.event.inputs.savename }}-${{ steps.current-time.outputs.formattedTime }}
   
     - name: Github Release
-    uses: ncipollo/release-action@v1
-    with:
-      artifacts: "${{ github.event.inputs.savename }}"
-      token: ${{ secrets.GITHUB_TOKEN }}
-      tag: ${{ github.event.inputs.savename }}-${{ steps.current-time.outputs.formattedTime }}
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "${{ github.event.inputs.savename }}"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ github.event.inputs.savename }}-${{ steps.current-time.outputs.formattedTime }}
 
